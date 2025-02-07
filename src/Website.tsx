@@ -3,7 +3,7 @@ import { Routes } from "react-router-dom";
 import Login from "./pages/Login";
 import Username from "./pages/User";
 
-function App() {
+function Website() {
   return (
     <Router>
       <Routes>
@@ -15,4 +15,4 @@ function App() {
   );
 }
 
-export default App;
+export default Website;
