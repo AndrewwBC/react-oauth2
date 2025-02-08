@@ -16,7 +16,11 @@
     "jsx": "react-jsx",
 
     "paths": {
-      "@/*": ["./src/*"]
+      "@app/*": ["./app/*"],
+      "@assets/*": ["./assets/*"],
+      "@components/*": ["./components/*"],
+      "@styles/*": ["./styles/*"],
+      "@utils/*": ["./utils/*"]
     },
 
     /* Linting */
