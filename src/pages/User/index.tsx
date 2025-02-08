@@ -1,29 +1,28 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Content } from "./styles";
+import { GithubUser } from "./types";
 
 const Username = () => {
-  const [user, setUser] = useState();
+  const [user, setUser] = useState<GithubUser | null>(null);
 
   useEffect(() => {
     getData();
   }, []);
 
   async function getData() {
-    const data = await axios.get("http://localhost:8080/user", {
-      withCredentials: true,
-    });
+    const data: { data: GithubUser } = await axios.get(
+      "http://localhost:8080/user",
+      {
+        withCredentials: true,
+      }
+    );
     const user = data.data;
     setUser(user);
     console.log(user);
   }
 
-  return (
-    <>
-      <div>
-        <span>{user?.name}</span>
-      </div>
-    </>
-  );
+  if (user) return <Content></Content>;
 };
 
 export default Username;

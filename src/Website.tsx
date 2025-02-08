@@ -4,16 +4,19 @@ import Login from "./pages/Login";
 import Username from "./pages/User";
 
 import "./assets/default.css";
+import { Container } from "./styles";
 
 function Website() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Login />} />
+    <Container>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Login />} />
 
-        <Route path="/user" element={<Username />} />
-      </Routes>
-    </Router>
+          <Route path="/user" element={<Username />} />
+        </Routes>
+      </Router>
+    </Container>
   );
 }
 
